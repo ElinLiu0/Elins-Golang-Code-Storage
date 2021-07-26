@@ -34,3 +34,32 @@
     	return sum, sub
     }
     --和Python一样，也有切片slice、延时执行defer等
+4.注释：方法等同于C/C++
+    --块注释之间无法二次嵌套
+    --相较于Java，Go更建议使用行注释：//
+    --正确的使用缩进快捷键：使用Shift+Tab向左整体移动，
+      只按shift代表其整体向右移动
+    -- gofmt -w main.go指令可以自动将main.go中的代码段格式化并写入
+    --运算符两边加空格
+5.代码书写风格：
+    func main() {
+    	//n换行
+    	fmt.Println("Hello\nWorld")
+    	//t空格
+    	fmt.Print("Hello\tWorld")
+    	fmt.Println("\nTom Says:\"Hi\"")
+    	// \r回车，从当前行的最前前面开始输出，覆盖掉以前的内容
+    	fmt.Println("My Name is\rElin")
+    	fmt.Println("姓名\t年龄\t籍贯\t住址\nJohn\t12\t河北\t北京")
+    	var num = 2 * 3
+    	fmt.Println("Result is %d",num)
+    }
+    理念：一个问题一个解决方案
+    --最好一行语句长度为80，以最大保证代码可读性
+    --使用“,”进行换行
+    --GoLang官方API：https://golang.org/pkg/
+      GoLang中文网：https://studygolang.com/pkgdoc
+6.GoLang的运作方式
+    --在GoLang中，调用一个函数的方式：
+        import package
+        package.function()
