@@ -1,0 +1,25 @@
+字符串类型的基本介绍：
+    --字符串就是一串固定长度的字符连接起来的字符序列。Go的字符串是由单个字节连接起来的
+    Go语言的字符串的字节使用UTF-8编码表示Unicode文本。
+    --注意事项和使用细节
+        1）Go语言的字符串的字节使用UTF-8编码标识Unicode文本，这样Go可以统一使用UTF-8编码
+        中文乱码问题不会再困扰程序员了
+        2）字符串一旦被赋值，则无法更改。
+        3）字符串的两种表现形式
+            --双引号，会识别转义字符
+            --反引号，以字符串的原生形式输出，包括换行和特殊字符，可以实现防止攻击。
+                --示例：str3 := `package main
+
+                     import "fmt"
+
+                     func main()  {
+                     	var text string = "Hello Golang!"
+                     	fmt.Println(text)
+                     	//GoLang中的字符串是不可变的
+                     	//var str = "hello"
+                     	//此处无法为第0位元素更改内容str[0] = 'a'
+                     	//输出源代码等效果
+                     	str2 := "abc\nabc"
+                     	fmt.Println(str2)`
+                     	fmt.Println(str3)
+        4）字符串拼接方式

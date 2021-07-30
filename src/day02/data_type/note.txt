@@ -36,3 +36,29 @@
       rune   有         与int32一样         -2的31次幂~2的31次幂    等于int32，表示
                                                                 一个Unicode码
       byte   无         与uint8等价         0-255                 当要存储字符是选用byte
+package main
+
+import "fmt"
+
+func main()  {
+	//int8的最小范围是-128~127如果超出边界则会报错
+	var num int8 = -128
+	var num2 int8 = 127
+	fmt.Println(num,num2)
+	var num3 uint8 = 0
+	//uint8最大范围到255
+	var num4 uint8 = 255
+	fmt.Println(num3,num4)
+	// int , unit , rune,byte的使用
+	var a int = 8000
+	var b uint = 1
+	//byte的极限值为255
+	var c byte = 255
+	fmt.Println("a=",a,"b=",b,"c=",c)
+}
+整数的使用细节：
+    1）Go语言中个整数类型分：有符号和无符号，int uint的大小和系统有关
+    2）Go语言的整型默认声明为int型
+    3）如何在程序查看某个变量的字节大小和数据类型
+    4）Go成程序整型变量在使用时，遵循保小不保大的原则，即：在保证程序正确
+    运行下，尽量使用占用空间小的数据类型。【如：年龄】
