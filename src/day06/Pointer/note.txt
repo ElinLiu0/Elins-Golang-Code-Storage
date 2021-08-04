@@ -1,0 +1,30 @@
+指针的基本介绍：
+    1）基本数据类型，变量存的就是值，也叫值类型
+    2）获取变量的地址，用&，比如：var num int，获取num的地址：&num
+    3）指针类型：变量村的是一个地址，这个地址子项的空间存的才是值
+    比如：var ptr * int = &num
+    4）获取指针类型所指向的值，使用：*，比如：var ptr *int获取ptr指向的值
+    package main
+
+    import "fmt"
+
+    //演示GoLang中的指针类型
+    func main()  {
+    	//基本数据类型在内存的布局
+    	var i int = 10
+    	// 如何取出i的内存地址
+    	fmt.Println("i的地址=",&i)
+    	//下面的var ptr *int = &i
+    	//1.ptr 是一个指针变量
+    	//2.ptr的类型是*int
+    	//3.ptr本身的值为&i
+    	var ptr *int = &i
+    	fmt.Printf("ptr=%v\n",ptr)
+    	fmt.Printf("ptr的地址=%v\n",&ptr)
+    	fmt.Printf("ptr 指向的值=%v\n",*ptr)
+    }
+指针的使用细节：
+    1）值类型，都有对应的指针类型，形式为：“数据类型，比如int的对应的指针就是
+       *int，float32对应的指针类型就是*float32，依次类推
+    2）值类型包括：基本数据类型int系列，float系列，bool，string、数组和结构体strcut
+
