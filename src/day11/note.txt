@@ -13,4 +13,31 @@
                 则返回True，否则为False
         ！      逻辑非运算符。如果条件为True，则逻辑为False，
                 否则为True
-                
+    注意事项：
+        1）&&也叫短路与，如果第一个条件为false，则第二个条件不会判断，最终结果为False
+        2）!!也叫短路或，如果第一个条件为true，则第二条件不会判断，最终结果为false
+        案例演示
+        package main
+
+        import "fmt"
+
+        //声明一个测试函数
+        func test() bool {
+                fmt.Println("test..")
+                return true
+        }
+        func main() {
+                /*短路与
+                因为i==9为false，因此后面放弃判断
+                */
+                var i int = 10
+                if i == 9 && test() {
+                        fmt.Println("ok")
+                }
+                /*短路或
+                因为i>9为true，因此后面放弃判断
+                */
+                if i > 9 || test() {
+                        fmt.Println("either ok")
+                }
+        }
